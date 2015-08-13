@@ -232,7 +232,7 @@ def InicializarVariablesDeEstado():
     comienzoInvulnerabilidad = 0               # momento en que el jugador empieza a ser invulnerable
     modoGameOver             = False           # si el jugador perdio
     momentoEnQuePerdio       = 0               # momento en que el jugador perdio
-    gano         = False           # indica en que momento el jugador gano
+    gano                     = False           # indica si el jugador gano
 
     return comienzoInvulnerabilidad, modoGameOver, modoInvulnerable, gano, momentoEnQuePerdio
 
