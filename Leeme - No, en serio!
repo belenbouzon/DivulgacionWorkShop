@@ -1,0 +1,41 @@
+
+Este programa tiene tres estructuras de datos para representar al jugador, a las ardillas enemigas y a los objetos del fondo.
+Son diccionarios con las siguientes claves:
+
+Claves usadas por todas las estructuras:
+    'x'       - La coordenada del borde izquierdo del objeto en el game world (no una coordenada de pixel en pantalla)
+    'y'       - La coordenada del borde superior del objeto en el game world (no una coordenada de pixel en pantalla)
+    'rect'    - el objeto pygame.Rect representando donde esta el objeto en pantalla
+
+Claves para la estructura del jugador:
+    'dibujo'  - el objeto pygame.Surface que almacena la imagen del jugador que va a dibujarse en la pantalla.
+    'mirando' - seteado en DERECHA o IZQUIERDA, almacena la direccion en la que esta mirando el jugador.
+    'tam'     - almacena el alto del jugador en pixels (es cuadrado, asi que equivale al ancho).
+    'salto'   - representa en que punto del salto esta 0 (sin salto) <= salto <= longitudSalto (el fin del salto)
+    'vidas'   - cantidad de vidas restantes del jugador
+
+Claves para las estructuras de los enemigos:
+    'dibujo'               - the pygame.Surface object that stores the image of the squirrel which will be drawn to the screen.
+    'movimientoHorizontal' - cuantos pixels por frame se mueve horizontalmente. Negativo: hacia la izquierda. Positivo: hacia la derecha.
+    'movimientoVertical'   - cuantos pixels por frame se mueve verticalment. Negativo: arriba. Positivo: abajo.
+    'ancho'                - el ancho de los enemigos, en pixels
+    'alto'                 - el alto de los enemigos, en pixels
+    'salto'                - representa en que punto del salto esta 0 (sin salto) <= salto <= longitudSalto (el fin del salto)
+    'longitudSalto'        - que tan rapido salta el enemigo. Un numero bajo indica un salto mas rapido.
+    'alturaSalto'          - que tan alto salta (en pixels)
+
+Claves para la estructura del pasto:
+    'imagenPasto'          - un entero que se refiere al indice del objeto pygame.Surface en PASTO_IMAGENES usado para el objeto pasto.
+
+
+>> para crear un jugador, basta escribir:
+
+jugador = CrearJugador()
+
+>> Te recomendamos fijarte qué hace esa función! Te va a servir muchísimo el ejemplo cada vez que quieras crear algun objeto nuevo.
+
+>>Para modificar su estructura, se toma una de SUS claves (si quiero modificar un jugador puedo tomar por ej la clave "vidas") y se escribe, por ejemplo:
+
+jugador['vidas'] = 1000
+
+Listo. El jugador arranca con 1000 vidas ~(˘▾˘~)
